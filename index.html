@@ -1,6 +1,220 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
+    <head>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-124765894-1');
+        </script>
+
+        <link rel="shortcut icon" type="image/png" href="/imgs/IMG_20190109_173102.png"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+            <style type="text/css">
+                a {
+                    color: #1772d0;
+                    text-decoration:none;
+                }
+                a:focus, a:hover {
+                    color: #f09228;
+                    text-decoration:none;
+                }
+                body,td,th {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+                    font-size: 15px;
+                }
+                workshops {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;   
+                    font-size: 13.5px;
+                }
+                heading {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+                    font-size: 16px;
+                    font-weight: 700
+                }
+                strong {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+                    font-size: 15px;
+                }
+                strongred {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+                    color: 'red' ;
+                    font-size: 16px
+                }
+                sectionheading {
+                    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+                    font-size: 19px;
+                    font-weight: 700
+                }
+                * {box-sizing: border-box;}
+                .img-comp-container {
+                  position: relative;
+                  height: 150px; /*should be the same height as the images*/
+                }
+                .img-comp-container-w {
+                  position: relative;
+                  height: 130px; /*should be the same height as the images*/
+                }
+                .img-comp-img {
+                  position: absolute;
+                  width: auto;
+                  height: auto;
+                  overflow:hidden;
+                }
+                .img-comp-img img {
+                  display:block;
+                  vertical-align:middle;
+                }
+                .img-comp-slider {
+                  position: absolute;
+                  z-index:9;
+                  cursor: ew-resize;
+                  /*set the appearance of the slider:*/
+                  width: 40px;
+                  height: 40px;
+                  background-color: #2196F3;
+                  opacity: 0.7;
+                  border-radius: 50%;
+                }
+            </style>
+            <script>
+            function initComparisons() {
+              var x, i;
+              /*find all elements with an "overlay" class:*/
+              x = document.getElementsByClassName("img-comp-overlay");
+              for (i = 0; i < x.length; i++) {
+                /*once for each "overlay" element:
+                pass the "overlay" element as a parameter when executing the compareImages function:*/
+                compareImages(x[i]);
+              }
+              function compareImages(img) {
+                var slider, img, clicked = 0, w, h;
+                /*get the width and height of the img element*/
+                w = img.offsetWidth;
+                h = img.offsetHeight;
+                /*set the width of the img element to 50%:*/
+                img.style.width = (w / 2) + "px";
+                /*create slider:*/
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "img-comp-slider");
+                /*insert slider*/
+                img.parentElement.insertBefore(slider, img);
+                /*position the slider in the middle:*/
+                slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                /*execute a function when the mouse button is pressed:*/
+                slider.addEventListener("mousedown", slideReady);
+                /*and another function when the mouse button is released:*/
+                window.addEventListener("mouseup", slideFinish);
+                /*or touched (for touch screens:*/
+                slider.addEventListener("touchstart", slideReady);
+                /*and released (for touch screens:*/
+                window.addEventListener("touchstop", slideFinish);
+                function slideReady(e) {
+                  /*prevent any other actions that may occur when moving over the image:*/
+                  e.preventDefault();
+                  /*the slider is now clicked and ready to move:*/
+                  clicked = 1;
+                  /*execute a function when the slider is moved:*/
+                  window.addEventListener("mousemove", slideMove);
+                  window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                  /*the slider is no longer clicked:*/
+                  clicked = 0;
+                }
+                function slideMove(e) {
+                  var pos;
+                  /*if the slider is no longer clicked, exit this function:*/
+                  if (clicked == 0) return false;
+                  /*get the cursor's x position:*/
+                  pos = getCursorPos(e)
+                  /*prevent the slider from being positioned outside the image:*/
+                  if (pos < 0) pos = 0;
+                  if (pos > w) pos = w;
+                  /*execute a function that will resize the overlay image according to the cursor:*/
+                  slide(pos);
+                }
+                function getCursorPos(e) {
+                  var a, x = 0;
+                  e = e || window.event;
+                  /*get the x positions of the image:*/
+                  a = img.getBoundingClientRect();
+                  /*calculate the cursor's x coordinate, relative to the image:*/
+                  x = e.pageX - a.left;
+                  /*consider any page scrolling:*/
+                  x = x - window.pageXOffset;
+                  return x;
+                }
+                function slide(x) {
+                  /*resize the image:*/
+                  img.style.width = x + "px";
+                  /*position the slider:*/
+                  slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                }
+              }
+            }
+            </script>
+            <title>
+                Melani Sánchez García
+            </title>
+            <meta name="Melani Sánchez García Unizar Homepage" http-equiv="Content-Type" content="Melani Sánchez García Unizar Homepage">
+
+            <script type="text/javascript" src="./js/scramble.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic" rel="stylesheet" type="text/css"> 
+    </head>
+
+    <body>
+        <table width="880" border="10" align="center" cellspacing="0" cellpadding="25">
+        <tbody><tr><td>
+        <p align="center"><font size="7">Melani Sánchez García</font></p>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="25">
+        <tbody><tr>
+            <td width="75%" valign="middle" align="justify">
+            <p class="paragraph-ch" id="intro-ch">
+                I started my PhD. in Computer Vision in October 2017 at the 
+                <a onclick="window.open(this.href); return false;" title="http://diis.unizar.es/" href="http://www.unizar.es/university-zaragoza" onkeypress="window.open(this.href); return false;">Universidad de Zaragoza</a>, 
+                where I am advised by <a href="http://webdiis.unizar.es/~jguerrer/" onclick="window.open(this.href); return false;"  onkeypress="window.open(this.href); return false;"> José J. Guerrero </a> and <a href="http://webdiis.unizar.es/~rmcantin/" onclick="window.open(this.href); return false;"  onkeypress="window.open(this.href); return false;"> Rubén Martínez Cantín </a>. 
+            </p>
+                My main research interests lie in the simulated prosthetic vision. My work consists of investigating
+		computer vision and deep learning techniques to be part of a prosthetic vision simulation system. This
+		simulation system is based on blind people with retinitis pigmentosa disease. Through cameras we acquire 
+		information from the environment of interest that we later process in a computer simulating the prosthetic
+		vision.
+                </p>
+            <p>
+                <b>Email</b>:
+                <font id="email" style="display:inline;">mesangar@unizar.es   <a data-brackets-id='6103' href="./" onclick="emailScramble.initAnimatedBubbleSort();return false;">unscramble</a></font>
+                <script data-brackets-id='6104'>
+                <script>
+                    emailScramble = new scrambledString(document.getElementById('email'),
+                    'emailScramble', 'orisbcs.zba@eusne',
+                    [6,14,11,4,1,5,17,15,12,2,13,8,3,9,7,10,16]);
+                </script>
+            </p>
+            <p>
+                <b>Phone Number</b>: 
+            </p>
+            <p class="paragraph-ch" align="center">
+                <a href="https://github.com/mesangar" onclick="window.open(this.href); return false;"  onkeypress="window.open(this.href); return false;">[GitHub]</a>
+                |
+                <a href="https://www.linkedin.com/in/melani-sánchez-garcía-93209716b/" onclick="window.open(this.href); return false;"  onkeypress="window.open(this.href); return false;">[LinkedIn]</a>
+                |
+                <a href="./docs/MelaniSanchez.pdf" onclick="window.open(this.href); return false;"  onkeypress="window.open(this.href); return false;">[CV]</a>
+            </p>          
+            </td>
+            <td>
+                <a href="imgs/IMG_20190109_173102.jpg"><img src="./imgs/IMG_20190109_173102.jpg" alt="HTML5 Icon" style="width:165px;height:250px;"></a>
+            </td>  
+        </tr></tbody></table>   
+        
+        <hr>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="25"> 
+
+</body>
 </html>
         
 
